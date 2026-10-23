@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一词一境 · 隐私政策</title>
+<style>
+  :root { --fg: #1f2328; --muted: #59636e; --bg: #fff; --line: #d1d9e0; --accent: #2563eb; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #e6edf3; --muted: #9198a1; --bg: #0d1117; --line: #30363d; --accent: #4493f8; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 36px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  .meta { color: var(--muted); font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>一词一境 · 隐私政策</h1>
+<p class="meta">生效日期：2026 年 10 月 23 日 · 适用于 Chrome / Edge 扩展「一词一境 - 懂上下文的 AI 英语翻译与学习」</p>
+
+<p>当前版本采用「自带 API Key」模式：开发者不运营任何接收你数据的服务器，不收集、不出售、不分析你的数据。翻译所需的文字只会发送到<strong>你自己在设置页填写的</strong>大模型接口；其余数据都只保存在你的浏览器里。</p>
+
+<h2>会发送给大模型接口的内容</h2>
+<p>只有在你主动触发翻译时（双击、划词、Alt+单击、开启全页翻译、截图翻译，或访问你设为「总是翻译」的网站），扩展才会把下列内容发送到你配置的 OpenAI 兼容接口（默认阿里云百炼 <code>https://dashscope.aliyuncs.com/compatible-mode/v1</code>，可在设置页更换）：</p>
+<table>
+  <tr><th>内容</th><th>用途</th></tr>
+  <tr><td>你选中的单词或段落</td><td>翻译对象</td></tr>
+  <tr><td>所在句子，以及设置页「额外上下文」允许的前后文字</td><td>判断文中含义</td></tr>
+  <tr><td>网页地址的前 120 个字符和网页标题</td><td>判断领域（如医学、编程）以选择合适的释义</td></tr>
+  <tr><td>全页翻译时页面上可见的段落文字</td><td>生成译文</td></tr>
+  <tr><td>截图翻译时从截图里识别出的英文文字（不含截图本身）</td><td>生成译文</td></tr>
+  <tr><td>观看 YouTube 视频时的英文字幕文字与视频标题（开启双语字幕时按播放进度分段发送；点「视频总结」时发送整条字幕）</td><td>生成双语字幕与视频总结</td></tr>
+  <tr><td>你在设置页填写的 API Key</td><td>接口鉴权，仅随请求发送给该接口</td></tr>
+</table>
+<p>这些请求由你使用的模型服务商处理，适用该服务商的隐私政策。扩展不会把内容发送给任何其他第三方。</p>
+<p><strong>截图只在本地处理</strong>：截图翻译时，扩展截取你框选的区域，用打包在扩展里的文字识别引擎（Tesseract）在你的浏览器里识别英文，截图不会上传到任何地方，识别完即丢弃；之后只有识别出的文字会按上表发送。</p>
+
+<h2>推荐链接</h2>
+<p>设置页的阿里云百炼注册引导里，标有「推荐链接」的地址带有我们的阿里云「云大使」推广码。只有在你点击时，浏览器才会打开该地址；推广关系由阿里云根据这次访问记录，扩展不会写入 Cookie、不会改动你浏览的网页里的链接，也不会向我们发送任何信息。通过推荐链接注册或购买，我们会获得阿里云的推广返佣，你的价格不变。</p>
+
+<h2>PDF</h2>
+<p>网页里的 PDF 改用扩展自带的阅读页打开时，扩展在你的浏览器里直接下载这个 PDF 文件并显示，文件不会上传到任何地方；查词、划选翻译时发送的内容与在网页上相同（所选文字及所在句子、PDF 的网址与标题）。本地 PDF 只在你的电脑上打开。</p>
+
+<h2>问题反馈</h2>
+<p>只有你在查词浮层或扩展弹窗里点「反馈问题」时，扩展才会整理一份诊断信息：当前网址和标题、出问题位置附近的页面结构片段（已去掉脚本、表单里填写的内容、可编辑区域的文字和网址参数）、浮层里显示的内容、扩展与浏览器版本、设置摘要（不含 API Key 和自定义语境，接口地址只保留域名）、本次打开浏览器以来的报错，以及一张当时可见区域的截图。</p>
+<p>这些信息先在反馈页完整展示给你，每一部分都可以取消勾选，截图默认不附带。扩展不会自动发送：由你选择用自己的邮件程序发给我们，或复制、下载后自行发送。收到的反馈只用于排查和修复问题。</p>
+
+<h2>保存在你浏览器里的数据</h2>
+<ul>
+  <li><strong>设置</strong>（含接口地址、模型名称和 API Key）：保存在 <code>chrome.storage.local</code>。</li>
+  <li><strong>生词本</strong>：你加入的单词、释义和例句，保存在 <code>chrome.storage.local</code>。</li>
+  <li><strong>翻译缓存</strong>：最多约 20000 条，保存在扩展自己的 IndexedDB 中，用于减少重复请求；设置页可一键清除。</li>
+  <li><strong>全页翻译状态</strong>：哪些标签页、哪些网站要保持全页翻译。</li>
+  <li><strong>用量统计</strong>：你用自己的 API Key 消耗了多少 token（按模型、功能、日期汇总的数字，不含任何查询内容），用于设置页「用量统计」；可一键清零。</li>
+  <li><strong>最近的报错</strong>：最多 30 条（时间、出错的功能、原因、网页地址的路径部分），只在问题反馈时由你决定是否附带；关闭浏览器即清空。</li>
+</ul>
+<p>这些数据不会离开你的设备，卸载扩展时由浏览器一并删除。</p>
+
+<h2>不做的事</h2>
+<ul>
+  <li>不收集浏览记录；除上述翻译场景和你主动发起的问题反馈外，不上传网页内容。「在网页上标出生词」只在你的浏览器里把网页文字和生词本比对，不发送到任何地方。</li>
+  <li>不使用任何统计、广告或追踪代码。</li>
+  <li>不出售、不转让数据，也不将数据用于与翻译无关的目的。</li>
+</ul>
+
+<h2>权限说明</h2>
+<ul>
+  <li><strong>storage</strong>：保存设置、生词本和全页翻译状态。</li>
+  <li><strong>访问所有网站</strong>：在你浏览的任意英文网页上提供划词翻译、全页翻译和截图翻译（截取当前标签页的可见区域也依赖这项权限）。只在上述翻译场景下发送网页文字。</li>
+  <li><strong>offscreen</strong>：截图翻译时打开一个不可见的扩展页面，在本地运行文字识别引擎；闲置两分钟后自动关闭。</li>
+  <li><strong>alarms</strong>：复习提醒。每 30 分钟在本地检查一次生词本里有没有该复习的词，有就在扩展图标上显示小红点；不联网、不上传数据。</li>
+</ul>
+
+<h2>朗读</h2>
+<p>单词发音使用浏览器自带的语音合成（Web Speech API）。部分系统语音可能由浏览器或操作系统提供商在线合成，适用其各自的隐私政策。</p>
+
+<h2>政策变更与联系方式</h2>
+<p>如本政策有变更，会更新本页面并修改生效日期。若今后推出由我们提供的翻译服务（如免费额度、按量付费），会在上线前更新本政策，写明经由我们服务器传输的数据、保存期限与用途，并在扩展内提示；届时你仍可选择继续使用自己的 API Key。</p>
+<p>有任何问题，请联系：<a href="mailto:chil12auce12@gmail.com">chil12auce12@gmail.com</a></p>
+
+<hr>
+
+<h2 lang="en">Privacy Policy (English summary)</h2>
+<div lang="en">
+<p>In its current bring-your-own-key mode, Yi Ci Yi Jing does not operate any server that receives your data, and does not collect, sell or analyze your data. When you trigger a translation, the selected text, its surrounding sentence (plus any extra context you enable), the first 120 characters of the page URL and the page title are sent only to the OpenAI-compatible API endpoint you configure in Settings, together with your own API key. For screenshot translation, the captured region is recognized locally in your browser by the bundled Tesseract OCR engine and is never uploaded; only the recognized English text is sent. On YouTube, the English caption text and video title are sent to generate bilingual subtitles and, when you ask for it, a video summary. Settings, your vocabulary list and the translation cache are stored locally in your browser and are removed when you uninstall the extension. No analytics, ads or tracking are used. Referral links: in the Alibaba Cloud Model Studio sign-up guide in Settings, links marked "推荐链接" carry our Alibaba Cloud affiliate code. They open only when you click them; the extension sets no cookies, does not change links on the pages you visit and sends nothing to us. If you sign up or buy through them we receive a commission from Alibaba Cloud; your price is unchanged and your first purchase gets a 10% discount. Contact: <a href="mailto:chil12auce12@gmail.com">chil12auce12@gmail.com</a></p>
+</div>
+</main>
+</body>
+</html>
