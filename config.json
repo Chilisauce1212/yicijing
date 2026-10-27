@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "rev": 4,
+  "rev": 5,
   "providers": [
     {
       "id": "bailian",
@@ -79,67 +79,6 @@
           "desc": "新用户 27 元买 3 个月（官网价 60 元），每月抵扣 20 元。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。价格以阿里云页面为准。",
           "label": "去看看",
           "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274.."
-        }
-      ]
-    },
-    {
-      "id": "qiniu",
-      "name": "七牛云 AI 大模型",
-      "site": "七牛云",
-      "lead": "新用户注册即得 300 万 Token，完成个人实名认证再得 200 万，一共 500 万。点下面的按钮，侧边栏会一步步带你开通。",
-      "startLabel": "七牛云（推荐链接，注册送 500 万 Token）",
-      "startUrl": "https://s.qiniu.com/2qayaa",
-      "disclose": "「推荐链接」来自七牛云推广计划，一词一境与七牛云没有隶属关系。",
-      "baseUrl": "https://api.qnaigc.com/v1",
-      "model": "deepseek/deepseek-v4.1-flash-1017",
-      "steps": [
-        {
-          "id": "login",
-          "title": "登录或注册七牛云",
-          "body": [
-            "在刚打开的七牛云页面注册或登录（可以用手机号）。请不要在无痕窗口里注册。",
-            "新用户注册成功就会发放 300 万 Token 体验资源包。登录好以后点「已登录，下一步」。"
-          ],
-          "next": "已登录，下一步"
-        },
-        {
-          "id": "identity",
-          "title": "完成个人实名认证，再领 200 万 Token",
-          "body": [
-            "打开「实名认证」页面，选「个人认证」，按提示填写信息并完成认证。",
-            "认证通过后，按七牛云页面上的提示加企业微信领取 200 万 Token。"
-          ],
-          "open": {
-            "label": "打开实名认证页",
-            "url": "https://portal.qiniu.com/developer/user/identity"
-          },
-          "next": "已认证，下一步"
-        },
-        {
-          "id": "key",
-          "title": "创建 API Key",
-          "body": [
-            "打开「API Key」页面，点「创建 API Key」。",
-            "备注随便填（比如「一词一境」），确定后复制生成的 Key。"
-          ],
-          "open": {
-            "label": "打开 API Key 页",
-            "url": "https://portal.qiniu.com/ai-inference/api-key"
-          },
-          "next": "已复制，下一步"
-        },
-        {
-          "id": "paste",
-          "title": "粘贴 Key 并检测",
-          "type": "key"
-        }
-      ],
-      "products": [
-        {
-          "title": "体验资源包用完后推荐：1000 万 Token 资源包",
-          "desc": "34 元买 1000 万 Token，6 个月内有效。价格以七牛云页面为准。",
-          "label": "去看看",
-          "url": "https://qmall.qiniu.com/template/MTMx?ref=index&spec_combo=MzU4OQ"
         }
       ]
     }
