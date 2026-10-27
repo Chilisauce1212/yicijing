@@ -1,16 +1,15 @@
 {
   "schema": 1,
-  "rev": 2,
+  "rev": 3,
   "providers": [
     {
       "id": "bailian",
       "name": "阿里云百炼",
       "site": "阿里云",
-      "tag": "推荐",
       "lead": "新用户开通百炼后，每个模型都有约 100 万 Token 的免费额度，90 天内有效。点下面的按钮，侧边栏会一步步带你开通。",
       "startLabel": "阿里云百炼（推荐链接，领取 9 折优惠券）",
       "startUrl": "https://www.aliyun.com/minisite/goods?userCode=o0val8ah",
-      "disclose": "「推荐链接」来自阿里云「云大使」推广计划，通过它注册可以领取 9 折优惠券，不会让你多花钱。一词一境与阿里云没有隶属关系。",
+      "disclose": "「推荐链接」来自阿里云「云大使」推广计划，一词一境与阿里云没有隶属关系。",
       "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
       "model": "qwen3.8-flash",
       "login": {
@@ -78,7 +77,7 @@
         {
           "title": "额度用完后推荐：全模型通用抵扣",
           "desc": "新用户 27 元买 3 个月（官网价 60 元），每月抵扣 20 元。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。价格以阿里云页面为准。",
-          "label": "去看看（推荐链接）",
+          "label": "去看看",
           "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274.."
         }
       ]
@@ -90,7 +89,7 @@
       "lead": "新用户注册即得 300 万 Token，完成个人实名认证再得 200 万，一共 500 万。点下面的按钮，侧边栏会一步步带你开通。",
       "startLabel": "七牛云（推荐链接，注册送 500 万 Token）",
       "startUrl": "https://s.qiniu.com/2qayaa",
-      "disclose": "「推荐链接」来自七牛云推广计划，通过它注册并消费，我们会获得七牛云的推广佣金，你的价格不变。一词一境与七牛云没有隶属关系。",
+      "disclose": "「推荐链接」来自七牛云推广计划，一词一境与七牛云没有隶属关系。",
       "baseUrl": "https://api.qnaigc.com/v1",
       "model": "deepseek/deepseek-v4.1-flash-1017",
       "steps": [
