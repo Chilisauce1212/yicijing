@@ -41,7 +41,11 @@
 <p><strong>截图只在本地处理</strong>：截图翻译时，扩展截取你框选的区域，用打包在扩展里的文字识别引擎（Tesseract）在你的浏览器里识别英文，截图不会上传到任何地方，识别完即丢弃；之后只有识别出的文字会按上表发送。</p>
 
 <h2>推荐链接</h2>
-<p>设置页的阿里云百炼注册引导里，标有「推荐链接」的地址带有我们的阿里云「云大使」推广码。只有在你点击时，浏览器才会打开该地址；推广关系由阿里云根据这次访问记录，扩展不会写入 Cookie、不会改动你浏览的网页里的链接，也不会向我们发送任何信息。通过推荐链接注册或购买，我们会获得阿里云的推广返佣，你的价格不变。</p>
+<p>设置页推荐的模型厂家（如阿里云百炼、七牛云）的注册引导里，以及额度用完时提示里推荐的套餐，标有「推荐链接」的地址带有我们在该厂家推广计划里的推广码（如阿里云「云大使」）。只有在你点击时，浏览器才会打开该地址；推广关系由厂家根据这次访问记录，扩展不会写入 Cookie、不会改动你浏览的网页里的链接，也不会向我们发送任何信息。通过推荐链接注册或购买，我们会获得该厂家的推广佣金，你的价格不变。</p>
+<p>点推荐按钮后，浏览器侧边栏会显示接入引导。引导第一步要判断你是否已经登录阿里云：扩展只在引导打开的那个阿里云页面里，调用阿里云页面自己用来显示顶栏账号状态的接口，只取「是否已登录」这一项，不读取账号信息；同时查看这个页面的地址是否进入了阿里云控制台。这些信息不保存、不发送给我们。你在引导里粘贴的 API Key 与在设置页填写的一样，只保存在本地并用于向该厂家的接口鉴权。</p>
+
+<h2>推荐配置的更新</h2>
+<p>设置页推荐的模型厂家、接入引导的步骤、推荐产品和说明文字来自一份配置文件。为了不用每次发布新版本就能更新这些内容，扩展会在浏览器启动时和之后每小时，从 <code>cdn.jsdelivr.net</code>、<code>fastly.jsdelivr.net</code> 或 <code>chilisauce1212.github.io</code> 下载这份公开文件（与本隐私政策放在同一个仓库）。这只是下载：请求不带 Cookie，也不附带你的任何数据，和打开一个公开网页一样（这些网站会像所有网站一样看到你的 IP 地址）。这份文件只含文字和链接，不含可执行的代码；扩展会逐项检查，格式不对就继续使用上次下载的版本。其中标有「广告」的厂家或产品是付费展示的。</p>
 
 <h2>PDF</h2>
 <p>网页里的 PDF 改用扩展自带的阅读页打开时，扩展在你的浏览器里直接下载这个 PDF 文件并显示，文件不会上传到任何地方；查词、划选翻译时发送的内容与在网页上相同（所选文字及所在句子、PDF 的网址与标题）。本地 PDF 只在你的电脑上打开。</p>
@@ -56,7 +60,7 @@
   <li><strong>生词本</strong>：你加入的单词、释义和例句，保存在 <code>chrome.storage.local</code>。</li>
   <li><strong>翻译缓存</strong>：最多约 20000 条，保存在扩展自己的 IndexedDB 中，用于减少重复请求；设置页可一键清除。</li>
   <li><strong>全页翻译状态</strong>：哪些标签页、哪些网站要保持全页翻译。</li>
-  <li><strong>用量统计</strong>：你用自己的 API Key 消耗了多少 token（按模型、功能、日期汇总的数字，不含任何查询内容），用于设置页「用量统计」；可一键清零。</li>
+  <li><strong>用量统计</strong>：你用自己的 API Key 消耗了多少 token（按模型、功能、日期汇总的数字，不含任何查询内容），用于设置页「用量统计」。</li>
   <li><strong>最近的报错</strong>：最多 30 条（时间、出错的功能、原因、网页地址的路径部分），只在问题反馈时由你决定是否附带；关闭浏览器即清空。</li>
 </ul>
 <p>这些数据不会离开你的设备，卸载扩展时由浏览器一并删除。</p>
@@ -73,7 +77,7 @@
   <li><strong>storage</strong>：保存设置、生词本和全页翻译状态。</li>
   <li><strong>访问所有网站</strong>：在你浏览的任意英文网页上提供划词翻译、全页翻译和截图翻译（截取当前标签页的可见区域也依赖这项权限）。只在上述翻译场景下发送网页文字。</li>
   <li><strong>offscreen</strong>：截图翻译时打开一个不可见的扩展页面，在本地运行文字识别引擎；闲置两分钟后自动关闭。</li>
-  <li><strong>alarms</strong>：复习提醒。每 30 分钟在本地检查一次生词本里有没有该复习的词，有就在扩展图标上显示小红点；不联网、不上传数据。</li>
+  <li><strong>alarms</strong>：复习提醒。每 30 分钟在本地检查一次生词本里有没有该复习的词，有就在扩展图标上显示小红点；不联网、不上传数据。另外每小时下载一次上面「推荐配置的更新」里说的公开配置文件。</li>
 </ul>
 
 <h2>朗读</h2>
@@ -87,7 +91,7 @@
 
 <h2 lang="en">Privacy Policy (English summary)</h2>
 <div lang="en">
-<p>In its current bring-your-own-key mode, Yi Ci Yi Jing does not operate any server that receives your data, and does not collect, sell or analyze your data. When you trigger a translation, the selected text, its surrounding sentence (plus any extra context you enable), the first 120 characters of the page URL and the page title are sent only to the OpenAI-compatible API endpoint you configure in Settings, together with your own API key. For screenshot translation, the captured region is recognized locally in your browser by the bundled Tesseract OCR engine and is never uploaded; only the recognized English text is sent. On YouTube, the English caption text and video title are sent to generate bilingual subtitles and, when you ask for it, a video summary. Settings, your vocabulary list and the translation cache are stored locally in your browser and are removed when you uninstall the extension. No analytics, ads or tracking are used. Referral links: in the Alibaba Cloud Model Studio sign-up guide in Settings, links marked "推荐链接" carry our Alibaba Cloud affiliate code. They open only when you click them; the extension sets no cookies, does not change links on the pages you visit and sends nothing to us. If you sign up or buy through them we receive a commission from Alibaba Cloud; your price is unchanged and your first purchase gets a 10% discount. Contact: <a href="mailto:chil12auce12@gmail.com">chil12auce12@gmail.com</a></p>
+<p>In its current bring-your-own-key mode, Yi Ci Yi Jing does not operate any server that receives your data, and does not collect, sell or analyze your data. When you trigger a translation, the selected text, its surrounding sentence (plus any extra context you enable), the first 120 characters of the page URL and the page title are sent only to the OpenAI-compatible API endpoint you configure in Settings, together with your own API key. For screenshot translation, the captured region is recognized locally in your browser by the bundled Tesseract OCR engine and is never uploaded; only the recognized English text is sent. On YouTube, the English caption text and video title are sent to generate bilingual subtitles and, when you ask for it, a video summary. Settings, your vocabulary list and the translation cache are stored locally in your browser and are removed when you uninstall the extension. No analytics, ads or tracking are used. Referral links: in the sign-up guides for the recommended model providers in Settings (such as Alibaba Cloud Model Studio and Qiniu Cloud), and in the plans suggested when your quota runs out, links marked "推荐链接" carry our affiliate code for that provider. They open only when you click them; the extension sets no cookies, does not change links on the pages you visit and sends nothing to us. If you sign up or buy through them we receive a commission from that provider; your price is unchanged. Recommended providers, guide steps and offers come from a public configuration file that the extension downloads from cdn.jsdelivr.net, fastly.jsdelivr.net or chilisauce1212.github.io at browser startup and every hour; the request carries no cookies or user data, the file contains only text and links (no code), and entries marked "广告" are paid placements. Contact: <a href="mailto:chil12auce12@gmail.com">chil12auce12@gmail.com</a></p>
 </div>
 </main>
 </body>
