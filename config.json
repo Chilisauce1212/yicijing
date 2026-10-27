@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "rev": 3,
+  "rev": 4,
   "providers": [
     {
       "id": "bailian",
       "name": "阿里云百炼",
       "site": "阿里云",
       "lead": "新用户开通百炼后，每个模型都有约 100 万 Token 的免费额度，90 天内有效。点下面的按钮，侧边栏会一步步带你开通。",
-      "startLabel": "阿里云百炼（推荐链接，领取 9 折优惠券）",
+      "startLabel": "阿里云百炼（推荐链接，注册送100万Token）",
       "startUrl": "https://www.aliyun.com/minisite/goods?userCode=o0val8ah",
       "disclose": "「推荐链接」来自阿里云「云大使」推广计划，一词一境与阿里云没有隶属关系。",
       "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
