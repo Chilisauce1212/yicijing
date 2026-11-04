@@ -61,7 +61,7 @@
 
 <h2>保存在你浏览器里的数据</h2>
 <ul>
-  <li><strong>设置</strong>（含接口地址、模型名称和 API Key）：保存在 <code>chrome.storage.local</code>。</li>
+  <li><strong>设置</strong>（接口地址、模型名称等）：保存在 <code>chrome.storage.local</code>。<strong>API Key</strong> 加密后单独保存在扩展自己的 IndexedDB 中，只有扩展后台能读取，网页和网页里的扩展脚本都拿不到。</li>
   <li><strong>生词本</strong>：你加入的单词、释义、例句和复习记录，保存在扩展自己的 IndexedDB 中。</li>
   <li><strong>翻译缓存</strong>：最多约 20000 条，保存在扩展自己的 IndexedDB 中，用于减少重复请求；设置页可一键清除。这个标签页翻过的视频字幕另存一份，刷新页面后直接恢复，关闭标签页或浏览器时删除。</li>
   <li><strong>模型测试结果</strong>：你点「测试全部模型」时，扩展用你的 API Key 向你填写的接口给每个模型发一句很短的请求，哪些模型能用的结果保存在本地。</li>
@@ -136,7 +136,7 @@
 
 <h3>Data stored in your browser</h3>
 <ul>
-  <li><strong>Settings</strong> (including the API address, model name and API key): stored in <code>chrome.storage.local</code>.</li>
+  <li><strong>Settings</strong> (API address, model name, etc.): stored in <code>chrome.storage.local</code>. The <strong>API key</strong> is encrypted and stored separately in the extension's own IndexedDB; only the extension's background service can read it, and neither web pages nor the extension's scripts running in web pages can access it.</li>
   <li><strong>Vocabulary list</strong>: the words, meanings, example sentences and review history you add, stored in the extension's own IndexedDB.</li>
   <li><strong>Translation cache</strong>: up to about 20,000 entries in the extension's own IndexedDB to avoid repeated requests; can be cleared in Settings. Video subtitles translated in a tab are kept separately so they come back after a page refresh, and are deleted when the tab or browser is closed.</li>
   <li><strong>Model test results</strong>: when you click "测试全部模型" (test all models), the extension sends one very short request per model to the API you configured, with your API key, and stores locally which models work.</li>
