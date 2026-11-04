@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "rev": 7,
+  "rev": 8,
   "usage": { "url": "https://onecontext.cloud/v1/usage" },
   "contact": { "email": "info@onecontext.cloud" },
   "providers": [
@@ -75,10 +75,17 @@
           "type": "key"
         }
       ],
+      "quotaTip": "新用户建议按顺序买：先买第 1 个抵扣包，首次付款满 20 元会送一张 10 元优惠券；再用这张券买第 2 个个人版 Token Plan Lite，每月只要 9.5 元。",
       "products": [
         {
-          "title": "额度用完后推荐：全模型通用抵扣",
-          "desc": "新用户 27 元买 3 个月（官网价 60 元），每月抵扣 20 元。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。价格以阿里云页面为准。",
+          "title": "全模型通用抵扣包（建议先买）",
+          "desc": "新用户 27 元买 3 个月，每月抵扣 20 元（共 60 元）。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。首次付款满 20 元还送一张 10 元优惠券。",
+          "label": "去看看",
+          "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274.."
+        },
+        {
+          "title": "个人版 Token Plan Lite",
+          "desc": "新用户 19.5 元/月起（原价 39 元），每月 11500 credits。用买抵扣包送的 10 元优惠券购买，只要 9.5 元/月。",
           "label": "去看看",
           "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274.."
         }
