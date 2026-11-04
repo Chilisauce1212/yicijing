@@ -1,7 +1,8 @@
 {
   "schema": 1,
-  "rev": 6,
+  "rev": 7,
   "usage": { "url": "https://onecontext.cloud/v1/usage" },
+  "contact": { "email": "info@onecontext.cloud" },
   "providers": [
     {
       "id": "bailian",
