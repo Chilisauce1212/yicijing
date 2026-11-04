@@ -11,6 +11,7 @@
   main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
   h1 { font-size: 28px; margin: 0 0 4px; }
   h2 { font-size: 20px; margin: 36px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  h3 { font-size: 18px; margin: 28px 0 6px; }
   .meta { color: var(--muted); font-size: 14px; }
   table { border-collapse: collapse; width: 100%; font-size: 15px; }
   th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
@@ -45,11 +46,11 @@
 <p>点推荐按钮后，浏览器侧边栏会显示接入引导。引导第一步要判断你是否已经登录阿里云：扩展只在引导打开的那个阿里云页面里，调用阿里云页面自己用来显示顶栏账号状态的接口，只取「是否已登录」这一项，不读取账号信息；同时查看这个页面的地址是否进入了阿里云控制台。这些信息不保存、不发送给我们。你在引导里粘贴的 API Key 与在设置页填写的一样，只保存在本地并用于向该厂家的接口鉴权。</p>
 
 <h2>推荐配置的更新</h2>
-<p>设置页推荐的模型厂家、接入引导的步骤、推荐产品和说明文字来自一份配置文件。为了不用每次发布新版本就能更新这些内容，扩展会在浏览器启动时和之后每小时，从 <code>cdn.jsdelivr.net</code>、<code>fastly.jsdelivr.net</code> 或 <code>chilisauce1212.github.io</code> 下载这份公开文件（与本隐私政策放在同一个仓库）。这只是下载：请求不带 Cookie，也不附带你的任何数据，和打开一个公开网页一样（这些网站会像所有网站一样看到你的 IP 地址）。这份文件只含文字和链接，不含可执行的代码；扩展会逐项检查，格式不对就继续使用上次下载的版本。其中标有「广告」的厂家或产品是付费展示的。</p>
+<p>设置页推荐的模型厂家、接入引导的步骤、推荐产品、说明文字，以及扩展里显示的联系邮箱来自一份配置文件。为了不用每次发布新版本就能更新这些内容，扩展会在浏览器启动时和之后每小时，从 <code>cdn.jsdelivr.net</code>、<code>fastly.jsdelivr.net</code> 或 <code>chilisauce1212.github.io</code> 下载这份公开文件（与本隐私政策放在同一个仓库）。这只是下载：请求不带 Cookie，也不附带你的任何数据，和打开一个公开网页一样（这些网站会像所有网站一样看到你的 IP 地址）。这份文件只含文字和链接，不含可执行的代码；扩展会逐项检查，格式不对就继续使用上次下载的版本。其中标有「广告」的厂家或产品是付费展示的。</p>
 
 <h2>用量统计上传（默认开启，可随时关闭）</h2>
 <p>这项上传默认开启。安装后第一次打开扩展弹窗时，弹窗顶部会说明上传什么，并提供「关闭上传」按钮；在你看到这条说明之前，扩展不会上传任何内容。你也可以随时在设置页「用量统计」里关掉「把用量统计上传给我们」。开着时，扩展大约每天一次，把按天汇总的数字发送到我们的服务器：每天用了哪个模型（你填写的模型名）、哪项功能（查词、全页翻译、字幕等），各用了多少 token、请求了多少次；同时附带扩展版本和一个第一次上传时随机生成的安装 ID（用来区分不同安装、统计有多少人在用，不包含也不关联你的姓名、邮箱或账号）。第一次上传会带上最近 30 天的统计。不上传接口地址、接口域名和 API Key。</p>
-<p>不上传你查的单词和句子、网页地址和内容、生词本、API Key。我们用这些数字了解大家怎么使用、该优化哪些功能和推荐哪些模型，汇总后的数字（如总用户数、各模型的用量）可能会对外介绍；不用于广告，不出售，不向任何第三方提供单个安装的数据。服务器在中国大陆，不记录访问日志和你的 IP 地址（网络连接本身会让服务器看到 IP，但不保存）；你随时可以关掉开关，关掉后扩展不再上传；已经上传的汇总数字会保留，直到我们停止这项统计。如果你希望删除已上传的数据，请发邮件给我们，并附上设置页「用量统计」→「会上传什么？会不会泄露隐私？」里显示的安装 ID，我们会删除这个安装 ID 的全部数据。</p>
+<p>不上传你查的单词和句子、网页地址和内容、生词本、API Key。我们用这些数字了解大家怎么使用、该优化哪些功能和推荐哪些模型，汇总后的数字（如总用户数、各模型的用量）可能会对外介绍；不用于广告，不出售，不向任何第三方提供单个安装的数据。服务器在中国大陆，不记录访问日志和你的 IP 地址（网络连接本身会让服务器看到 IP，但不保存）；你随时可以关掉开关，关掉后扩展不再上传；已经上传的汇总数字会保留，直到我们停止这项统计。如果你希望删除已上传的数据，在设置页「用量统计」→「会上传什么？会不会泄露隐私？」里点「发邮件给我们」，邮件会自动带上你的安装 ID；也可以自己发邮件到 <a href="mailto:info@onecontext.cloud">info@onecontext.cloud</a> 并附上安装 ID。我们会删除这个安装 ID 的全部数据。</p>
 
 <h2>PDF</h2>
 <p>网页里的 PDF 改用扩展自带的阅读页打开时，扩展在你的浏览器里直接下载这个 PDF 文件并显示，文件不会上传到任何地方；查词、划选翻译时发送的内容与在网页上相同（所选文字及所在句子、PDF 的网址与标题）。本地 PDF 只在你的电脑上打开。</p>
@@ -61,7 +62,7 @@
 <h2>保存在你浏览器里的数据</h2>
 <ul>
   <li><strong>设置</strong>（含接口地址、模型名称和 API Key）：保存在 <code>chrome.storage.local</code>。</li>
-  <li><strong>生词本</strong>：你加入的单词、释义和例句，保存在 <code>chrome.storage.local</code>。</li>
+  <li><strong>生词本</strong>：你加入的单词、释义、例句和复习记录，保存在扩展自己的 IndexedDB 中。</li>
   <li><strong>翻译缓存</strong>：最多约 20000 条，保存在扩展自己的 IndexedDB 中，用于减少重复请求；设置页可一键清除。这个标签页翻过的视频字幕另存一份，刷新页面后直接恢复，关闭标签页或浏览器时删除。</li>
   <li><strong>模型测试结果</strong>：你点「测试全部模型」时，扩展用你的 API Key 向你填写的接口给每个模型发一句很短的请求，哪些模型能用的结果保存在本地。</li>
   <li><strong>全页翻译状态</strong>：哪些标签页、哪些网站要保持全页翻译。</li>
@@ -82,7 +83,7 @@
   <li><strong>storage</strong>：保存设置、生词本和全页翻译状态。</li>
   <li><strong>访问所有网站</strong>：在你浏览的任意英文网页上提供划词翻译、全页翻译和截图翻译（截取当前标签页的可见区域也依赖这项权限）。只在上述翻译场景下发送网页文字。</li>
   <li><strong>offscreen</strong>：截图翻译时打开一个不可见的扩展页面，在本地运行文字识别引擎；闲置两分钟后自动关闭。</li>
-  <li><strong>alarms</strong>：复习提醒。每 30 分钟在本地检查一次生词本里有没有该复习的词，有就在扩展图标上显示小红点；不联网、不上传数据。另外每小时下载一次上面「推荐配置的更新」里说的公开配置文件；你同意上传用量统计时，也用它大约每天上传一次。</li>
+  <li><strong>alarms</strong>：复习提醒。每 30 分钟在本地检查一次生词本里有没有该复习的词，有就在扩展图标上显示小红点；不联网、不上传数据。另外每小时下载一次上面「推荐配置的更新」里说的公开配置文件；用量统计上传开着时，也用它大约每天上传一次。</li>
 </ul>
 
 <h2>朗读</h2>
@@ -90,13 +91,82 @@
 
 <h2>政策变更与联系方式</h2>
 <p>如本政策有变更，会更新本页面并修改生效日期。若今后推出由我们提供的翻译服务（如免费额度、按量付费），会在上线前更新本政策，写明经由我们服务器传输的数据、保存期限与用途，并在扩展内提示；届时你仍可选择继续使用自己的 API Key。</p>
-<p>有任何问题，请联系：<a href="mailto:chil12auce12@gmail.com">chil12auce12@gmail.com</a></p>
+<p>有任何问题，或要求删除已上传的用量数据，请联系：<a href="mailto:info@onecontext.cloud">info@onecontext.cloud</a></p>
 
 <hr>
 
-<h2 lang="en">Privacy Policy (English summary)</h2>
+<h2 lang="en">Privacy Policy (English)</h2>
 <div lang="en">
-<p>In its current bring-your-own-key mode, Yi Ci Yi Jing does not operate any server that receives your data, and does not collect, sell or analyze your data. When you trigger a translation, the selected text, its surrounding sentence (plus any extra context you enable), the first 120 characters of the page URL and the page title are sent only to the OpenAI-compatible API endpoint you configure in Settings, together with your own API key. For screenshot translation, the captured region is recognized locally in your browser by the bundled Tesseract OCR engine and is never uploaded; only the recognized English text is sent. On YouTube, the English caption text and video title are sent to generate bilingual subtitles and, when you ask for it, a video summary. Settings, your vocabulary list and the translation cache are stored locally in your browser and are removed when you uninstall the extension. No analytics, ads or tracking are used. Referral links: in the sign-up guides for the recommended model providers in Settings (such as Alibaba Cloud Model Studio and Qiniu Cloud), and in the plans suggested when your quota runs out, links marked "推荐链接" carry our affiliate code for that provider. They open only when you click them; the extension sets no cookies, does not change links on the pages you visit and sends nothing to us. If you sign up or buy through them we receive a commission from that provider; your price is unchanged. Recommended providers, guide steps and offers come from a public configuration file that the extension downloads from cdn.jsdelivr.net, fastly.jsdelivr.net or chilisauce1212.github.io at browser startup and every hour; the request carries no cookies or user data, the file contains only text and links (no code), and entries marked "广告" are paid placements. Contact: <a href="mailto:chil12auce12@gmail.com">chil12auce12@gmail.com</a></p>
+<p class="meta">Effective date: November 4, 2026 · Applies to the Chrome / Edge extension "一词一境 (Yi Ci Yi Jing) – context-aware AI English translation and learning". If the Chinese and English versions differ, the Chinese version above prevails.</p>
+
+<p>In its current "bring your own API key" mode, apart from the usage statistics upload described below (on by default, can be turned off at any time), the developer does not run any server that receives your data, and does not collect, sell or analyze your data. Text needed for translation is sent only to the AI model API <strong>that you configure in Settings</strong>; everything else stays in your browser.</p>
+
+<h3>What is sent to the AI model API</h3>
+<p>Only when you trigger a translation (double-click, select text, Alt+click, turn on full-page translation, screenshot translation, or visit a site you set to "always translate") does the extension send the following to the OpenAI-compatible API you configured (by default Alibaba Cloud Model Studio, <code>https://dashscope.aliyuncs.com/compatible-mode/v1</code>; you can change it in Settings):</p>
+<table>
+  <tr><th>Content</th><th>Purpose</th></tr>
+  <tr><td>The word or passage you selected</td><td>What to translate</td></tr>
+  <tr><td>The sentence it appears in, plus the surrounding text allowed by the "extra context" setting</td><td>Working out the meaning in context</td></tr>
+  <tr><td>The first 120 characters of the page URL and the page title</td><td>Identifying the domain (e.g. medicine, programming) to pick the right sense</td></tr>
+  <tr><td>Visible paragraphs on the page during full-page translation</td><td>Producing the translation</td></tr>
+  <tr><td>English text recognized from a screenshot (not the screenshot itself)</td><td>Producing the translation</td></tr>
+  <tr><td>English caption text and the video title when you watch videos with English captions (YouTube, TikTok and other sites). With bilingual subtitles on, captions are sent in chunks as the video plays; "video summary" sends the whole transcript. On TikTok, captions near the start of the next few videos are also sent in advance, as many as the "translate ahead" setting allows, plus their descriptions when full-page translation is on; you may not have watched these videos yet. Set it to 0 to turn this off.</td><td>Bilingual subtitles and video summaries</td></tr>
+  <tr><td>The API key you entered in Settings</td><td>Authentication; sent only to that API with each request</td></tr>
+</table>
+<p>These requests are handled by the model provider you use, under that provider's privacy policy. The extension does not send this content to any other third party.</p>
+<p><strong>Screenshots stay on your device.</strong> For screenshot translation the extension captures the area you select and recognizes the English text in your browser with the bundled OCR engine (Tesseract). The screenshot is never uploaded and is discarded after recognition; only the recognized text is sent as described above.</p>
+
+<h3>Referral links</h3>
+<p>In the sign-up guides for the model providers recommended in Settings (such as Alibaba Cloud Model Studio and Qiniu Cloud), and in the plans suggested when your quota runs out, links marked "推荐链接" (referral link) carry our referral code for that provider's affiliate program (such as Alibaba Cloud's "云大使"). The browser opens such a link only when you click it; the provider records the referral from that visit. The extension does not set cookies, does not change links on the pages you browse and sends nothing to us. If you sign up or buy through a referral link we receive a commission from that provider; your price is unchanged.</p>
+<p>After you click a referral button, a setup guide opens in the browser side panel. To tell whether you are signed in to Alibaba Cloud, the extension calls, only in the Alibaba Cloud page the guide opened, the endpoint that page itself uses to show the account status in its top bar, and reads only whether you are signed in, not your account details; it also checks whether that page's address has reached the Alibaba Cloud console. This is neither stored nor sent to us. An API key you paste in the guide is treated like one entered in Settings: stored locally and used only to authenticate with that provider.</p>
+
+<h3>Configuration updates</h3>
+<p>The recommended providers, guide steps, recommended products, texts and the contact email address in the extension come from a configuration file, so they can be updated without releasing a new version. At browser startup and every hour after that, the extension downloads this public file from <code>cdn.jsdelivr.net</code>, <code>fastly.jsdelivr.net</code> or <code>chilisauce1212.github.io</code> (it lives in the same repository as this policy). This is a download only: the request carries no cookies and none of your data, just like opening a public web page (like every website, these sites can see your IP address). The file contains only text and links, never executable code; the extension checks every field and keeps the previous version if anything is malformed. Providers or products marked "广告" (ad) are paid placements.</p>
+
+<h3>Usage statistics upload (on by default, can be turned off at any time)</h3>
+<p>This upload is on by default. The first time you open the extension popup after installing, a notice at the top explains what is uploaded and offers a "关闭上传" (turn off upload) button; nothing is uploaded before you have seen that notice. You can also turn off "把用量统计上传给我们" at any time on the Usage page in Settings. While it is on, about once a day the extension sends daily totals to our server: which model you used (the model name you entered), which feature (word lookup, full-page translation, subtitles, etc.), and how many tokens and requests each used. It also sends the extension version and an install ID generated at random on the first upload (used to tell installs apart and count how many people use the extension; it does not contain or link to your name, email or account). The first upload includes the last 30 days.</p>
+<p>It never uploads the words or sentences you look up, page addresses or content, your vocabulary list, your API key, or your API address or its domain. We use these figures to understand how the extension is used, which features to improve and which models to recommend. Aggregated figures (such as total users or usage per model) may be shared publicly; they are not used for advertising or sold, and data for an individual install is never provided to any third party. The server is in mainland China and keeps no access logs and no IP addresses (the network connection itself reveals your IP to the server, but it is not stored). Turning the upload off stops further uploads; figures already uploaded are kept until we end this program. To have uploaded data deleted, click "发邮件给我们" (email us) under "会上传什么？会不会泄露隐私？" on the Usage page, which fills in your install ID, or email <a href="mailto:info@onecontext.cloud">info@onecontext.cloud</a> with your install ID. We will delete all data for that install ID.</p>
+
+<h3>PDF</h3>
+<p>When a PDF on the web opens in the extension's own viewer, the extension downloads the file in your browser and displays it; the file is not uploaded anywhere. Word lookups and translations send the same content as on web pages (the selected text and its sentence, the PDF's address and title). Local PDFs are opened only on your computer.</p>
+
+<h3>Feedback</h3>
+<p>Only when you click "反馈问题" (report a problem) in the lookup popup or the extension popup does the extension prepare diagnostic information: the current page address and title, a structural snippet of the page around the problem (with scripts, form input, editable text and URL parameters removed), what the popup showed, extension and browser versions, a settings summary (without the API key or custom context; only the domain of the API address), errors since the browser was opened, and a screenshot of the visible area.</p>
+<p>All of this is shown to you in full on the feedback page first; every part can be unchecked, and the screenshot is not included by default. Nothing is sent automatically: you choose to send it with your own email program, or copy or download it and send it yourself. Feedback is used only to investigate and fix problems.</p>
+
+<h3>Data stored in your browser</h3>
+<ul>
+  <li><strong>Settings</strong> (including the API address, model name and API key): stored in <code>chrome.storage.local</code>.</li>
+  <li><strong>Vocabulary list</strong>: the words, meanings, example sentences and review history you add, stored in the extension's own IndexedDB.</li>
+  <li><strong>Translation cache</strong>: up to about 20,000 entries in the extension's own IndexedDB to avoid repeated requests; can be cleared in Settings. Video subtitles translated in a tab are kept separately so they come back after a page refresh, and are deleted when the tab or browser is closed.</li>
+  <li><strong>Model test results</strong>: when you click "测试全部模型" (test all models), the extension sends one very short request per model to the API you configured, with your API key, and stores locally which models work.</li>
+  <li><strong>Full-page translation state</strong>: which tabs and sites keep full-page translation on.</li>
+  <li><strong>Usage statistics</strong>: how many tokens your own API key used (totals by model, feature and date, with no query content), shown on the Usage page in Settings; unless you turn the upload off, the daily totals are sent to us as described above.</li>
+  <li><strong>Recent errors</strong>: up to 30 entries (time, feature, reason, path part of the page address), attached to feedback only if you choose; cleared when the browser closes.</li>
+</ul>
+<p>Apart from the usage statistics upload above, this data does not leave your device and is removed by the browser when you uninstall the extension.</p>
+
+<h3>What we don't do</h3>
+<ul>
+  <li>We don't collect browsing history, and don't upload page content except in the translation cases above and feedback you choose to send.</li>
+  <li>We don't use any third-party analytics, advertising or tracking code; the only statistics are the usage statistics upload above, which you can turn off, sent to our own server.</li>
+  <li>We don't sell or transfer data, or use it for purposes unrelated to translation.</li>
+</ul>
+
+<h3>Permissions</h3>
+<ul>
+  <li><strong>storage</strong>: saves settings, the vocabulary list and full-page translation state.</li>
+  <li><strong>Access to all sites</strong>: provides word lookup, full-page translation and screenshot translation on any English page you visit (capturing the visible area of the current tab also relies on this). Page text is sent only in the translation cases above.</li>
+  <li><strong>offscreen</strong>: for screenshot translation, opens an invisible extension page that runs the OCR engine locally; it closes after two minutes of inactivity.</li>
+  <li><strong>alarms</strong>: review reminders. Every 30 minutes the extension checks locally whether any words are due for review and, if so, shows a small red dot on its icon; this uses no network and uploads nothing. It also downloads the public configuration file described above every hour, and, while the usage statistics upload is on, uploads about once a day.</li>
+</ul>
+
+<h3>Pronunciation</h3>
+<p>Word pronunciation uses the browser's built-in speech synthesis (Web Speech API). Some system voices may be synthesized online by the browser or operating system vendor, under their own privacy policies.</p>
+
+<h3>Changes and contact</h3>
+<p>If this policy changes, we will update this page and its effective date. If we later offer a translation service of our own (such as a free quota or pay-as-you-go), we will update this policy before launch, describe the data passing through our servers, how long it is kept and why, and notify you in the extension; you will still be able to keep using your own API key.</p>
+<p>For any questions, or to request deletion of uploaded usage data, contact: <a href="mailto:info@onecontext.cloud">info@onecontext.cloud</a></p>
 </div>
 </main>
 </body>
