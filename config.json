@@ -1,6 +1,7 @@
 {
   "schema": 1,
-  "rev": 5,
+  "rev": 6,
+  "usage": { "url": "https://onecontext.cloud/v1/usage" },
   "providers": [
     {
       "id": "bailian",
