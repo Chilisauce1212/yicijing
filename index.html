@@ -36,6 +36,7 @@
   <tr><td>全页翻译时页面上可见的段落文字</td><td>生成译文</td></tr>
   <tr><td>截图翻译时从截图里识别出的英文文字（不含截图本身）</td><td>生成译文</td></tr>
   <tr><td>观看带英文字幕的视频（YouTube、TikTok 和其他网站）时的英文字幕文字与视频标题（开启双语字幕时按播放进度分段发送；点「视频总结」时发送整条字幕；TikTok 上还会按「提前翻译」设置的条数，提前发送后面几条视频开头的字幕，开着全页翻译时也包括简介，这些视频你可能还没有看，设为 0 可关闭）</td><td>生成双语字幕与视频总结</td></tr>
+  <tr><td>你在网页输入框里写的、点「英」按钮或按快捷键要翻译成英文的那段文字（只在你主动触发时读取和发送，扩展不会自己读输入框；密码、银行卡、验证码这类输入框不会出现按钮）</td><td>翻译成英文，由你决定是否替换进输入框，扩展不会替你发送</td></tr>
   <tr><td>你在设置页填写的 API Key</td><td>接口鉴权，仅随请求发送给该接口</td></tr>
 </table>
 <p>这些请求由你使用的模型服务商处理，适用该服务商的隐私政策。扩展不会把内容发送给任何其他第三方。</p>
@@ -43,7 +44,7 @@
 
 <h2>推荐链接</h2>
 <p>设置页推荐的模型厂家（如阿里云百炼、七牛云）的注册引导里，以及额度用完时提示里推荐的套餐，标有「推荐链接」的地址带有我们在该厂家推广计划里的推广码（如阿里云「云大使」）。只有在你点击时，浏览器才会打开该地址；推广关系由厂家根据这次访问记录，扩展不会写入 Cookie、不会改动你浏览的网页里的链接，也不会向我们发送任何信息。通过推荐链接注册或购买，我们会获得该厂家的推广佣金，你的价格不变。</p>
-<p>点推荐按钮后，浏览器侧边栏会显示接入引导。引导第一步要判断你是否已经登录阿里云：扩展只在引导打开的那个阿里云页面里，调用阿里云页面自己用来显示顶栏账号状态的接口，只取「是否已登录」这一项，不读取账号信息；同时查看这个页面的地址是否进入了阿里云控制台。这些信息不保存、不发送给我们。你在引导里粘贴的 API Key 与在设置页填写的一样，只保存在本地并用于向该厂家的接口鉴权。</p>
+<p>点推荐按钮后，浏览器侧边栏会显示接入引导。引导第一步要判断你是否已经登录阿里云：扩展只在引导打开的那个阿里云页面里，调用阿里云页面自己用来显示顶栏账号状态的接口，只取「是否已登录」这一项，不读取账号信息；同时查看这个页面的地址是否进入了阿里云控制台。这些信息不保存、不发送给我们。登录以后，为了省去手动复制，引导会在你打开的阿里云百炼控制台页面上查找你自己的专属接口地址（API Key 页面上的「按量付费 Base URL」）；只在这些控制台页面里、只在引导进行中查找，页面上的其他内容（包括 API Key）不读取。找到的地址只保存在本地，用来发送翻译请求，不发送给我们。你在引导里粘贴的 API Key 与在设置页填写的一样，只保存在本地并用于向该厂家的接口鉴权。</p>
 
 <h2>推荐配置的更新</h2>
 <p>设置页推荐的模型厂家、接入引导的步骤、推荐产品、说明文字，以及扩展里显示的联系邮箱来自一份配置文件。为了不用每次发布新版本就能更新这些内容，扩展会在浏览器启动时和之后每小时，从 <code>cdn.jsdelivr.net</code>、<code>fastly.jsdelivr.net</code> 或 <code>chilisauce1212.github.io</code> 下载这份公开文件（与本隐私政策放在同一个仓库）。这只是下载：请求不带 Cookie，也不附带你的任何数据，和打开一个公开网页一样（这些网站会像所有网站一样看到你的 IP 地址）。这份文件只含文字和链接，不含可执行的代码；扩展会逐项检查，格式不对就继续使用上次下载的版本。其中标有「广告」的厂家或产品是付费展示的。</p>
@@ -89,6 +90,9 @@
 <h2>朗读</h2>
 <p>单词发音使用浏览器自带的语音合成（Web Speech API）。部分系统语音可能由浏览器或操作系统提供商在线合成，适用其各自的隐私政策。</p>
 
+<h2>官网的来源统计</h2>
+<p>这一节只关于官网 <code>onecontext.cloud</code>，和扩展无关。我们在不同平台发布、或请朋友转发的官网链接带有一段来源短码（形如 <code>onecontext.cloud/r/k7m2xq9p</code>，由平台和转发人算出，链接里不显示明文）。打开这种链接时，服务器给这个代号当天的访问次数加一，再跳转到官网首页；之后在官网点商店按钮或下载离线安装包时，页面会把「来源代号和点了哪个按钮」发给服务器，同样只累加次数，没带代号直接打开官网的也一样计数。我们只保存「代号、日期、次数」，不保存 IP 地址，不设置 Cookie，不能识别到个人；来源代号只在这次浏览期间保存在你浏览器的会话存储里，关掉标签页就没有了。</p>
+
 <h2>政策变更与联系方式</h2>
 <p>如本政策有变更，会更新本页面并修改生效日期。若今后推出由我们提供的翻译服务（如免费额度、按量付费），会在上线前更新本政策，写明经由我们服务器传输的数据、保存期限与用途，并在扩展内提示；届时你仍可选择继续使用自己的 API Key。</p>
 <p>有任何问题，或要求删除已上传的用量数据，请联系：<a href="mailto:info@onecontext.cloud">info@onecontext.cloud</a></p>
@@ -111,6 +115,7 @@
   <tr><td>Visible paragraphs on the page during full-page translation</td><td>Producing the translation</td></tr>
   <tr><td>English text recognized from a screenshot (not the screenshot itself)</td><td>Producing the translation</td></tr>
   <tr><td>English caption text and the video title when you watch videos with English captions (YouTube, TikTok and other sites). With bilingual subtitles on, captions are sent in chunks as the video plays; "video summary" sends the whole transcript. On TikTok, captions near the start of the next few videos are also sent in advance, as many as the "translate ahead" setting allows, plus their descriptions when full-page translation is on; you may not have watched these videos yet. Set it to 0 to turn this off.</td><td>Bilingual subtitles and video summaries</td></tr>
+  <tr><td>Text you write in a web page's input box and ask to translate into English by clicking the "英" button or pressing the shortcut. It is read and sent only when you trigger it; the extension never reads input boxes on its own, and the button never appears in password, payment-card or verification-code fields.</td><td>Translating it into English; you decide whether to put it into the input box, and the extension never sends anything on your behalf</td></tr>
   <tr><td>The API key you entered in Settings</td><td>Authentication; sent only to that API with each request</td></tr>
 </table>
 <p>These requests are handled by the model provider you use, under that provider's privacy policy. The extension does not send this content to any other third party.</p>
@@ -118,7 +123,7 @@
 
 <h3>Referral links</h3>
 <p>In the sign-up guides for the model providers recommended in Settings (such as Alibaba Cloud Model Studio and Qiniu Cloud), and in the plans suggested when your quota runs out, links marked "推荐链接" (referral link) carry our referral code for that provider's affiliate program (such as Alibaba Cloud's "云大使"). The browser opens such a link only when you click it; the provider records the referral from that visit. The extension does not set cookies, does not change links on the pages you browse and sends nothing to us. If you sign up or buy through a referral link we receive a commission from that provider; your price is unchanged.</p>
-<p>After you click a referral button, a setup guide opens in the browser side panel. To tell whether you are signed in to Alibaba Cloud, the extension calls, only in the Alibaba Cloud page the guide opened, the endpoint that page itself uses to show the account status in its top bar, and reads only whether you are signed in, not your account details; it also checks whether that page's address has reached the Alibaba Cloud console. This is neither stored nor sent to us. An API key you paste in the guide is treated like one entered in Settings: stored locally and used only to authenticate with that provider.</p>
+<p>After you click a referral button, a setup guide opens in the browser side panel. To tell whether you are signed in to Alibaba Cloud, the extension calls, only in the Alibaba Cloud page the guide opened, the endpoint that page itself uses to show the account status in its top bar, and reads only whether you are signed in, not your account details; it also checks whether that page's address has reached the Alibaba Cloud console. This is neither stored nor sent to us. After you sign in, to save you copying it by hand, the guide looks for your own dedicated API address (the "Base URL" for pay-as-you-go shown on the API Key page) in the Alibaba Cloud Model Studio console pages you opened; it looks only in those console pages and only while the guide is in progress, and reads nothing else on the page (including API keys). The address found is stored only locally and used to send translation requests; it is not sent to us. An API key you paste in the guide is treated like one entered in Settings: stored locally and used only to authenticate with that provider.</p>
 
 <h3>Configuration updates</h3>
 <p>The recommended providers, guide steps, recommended products, texts and the contact email address in the extension come from a configuration file, so they can be updated without releasing a new version. At browser startup and every hour after that, the extension downloads this public file from <code>cdn.jsdelivr.net</code>, <code>fastly.jsdelivr.net</code> or <code>chilisauce1212.github.io</code> (it lives in the same repository as this policy). This is a download only: the request carries no cookies and none of your data, just like opening a public web page (like every website, these sites can see your IP address). The file contains only text and links, never executable code; the extension checks every field and keeps the previous version if anything is malformed. Providers or products marked "广告" (ad) are paid placements.</p>
@@ -163,6 +168,9 @@
 
 <h3>Pronunciation</h3>
 <p>Word pronunciation uses the browser's built-in speech synthesis (Web Speech API). Some system voices may be synthesized online by the browser or operating system vendor, under their own privacy policies.</p>
+
+<h3>Website referral counts</h3>
+<p>This applies only to the website <code>onecontext.cloud</code>, not to the extension. Links to the website that we post on different platforms or that friends share carry a short source code (such as <code>onecontext.cloud/r/k7m2xq9p</code>, derived from the platform and the sharer so that neither appears in plain text). When such a link is opened, the server adds one to that code's visit count for the day and redirects to the home page; when you then click a store button or download the offline package on the website, the page sends the source code and which button was clicked, which is also only added to a count (clicks without a code are counted too). We store only the code, the date and the counts, no IP addresses and no cookies, so no individual can be identified; the source code is kept in your browser's session storage only for this visit and is gone when you close the tab.</p>
 
 <h3>Changes and contact</h3>
 <p>If this policy changes, we will update this page and its effective date. If we later offer a translation service of our own (such as a free quota or pay-as-you-go), we will update this policy before launch, describe the data passing through our servers, how long it is kept and why, and notify you in the extension; you will still be able to keep using your own API key.</p>
