@@ -1,8 +1,12 @@
 {
   "schema": 1,
-  "rev": 10,
-  "usage": { "url": "https://onecontext.cloud/v1/usage" },
-  "contact": { "email": "info@onecontext.cloud" },
+  "rev": 23,
+  "usage": {
+    "url": "https://onecontext.cloud/v1/usage"
+  },
+  "contact": {
+    "email": "info@onecontext.cloud"
+  },
   "providers": [
     {
       "id": "bailian",
@@ -14,6 +18,18 @@
       "disclose": "「推荐链接」来自阿里云「云大使」推广计划，一词一境与阿里云没有隶属关系。",
       "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
       "model": "qwen3.8-flash",
+      "endpoint": {
+        "find": "https://ws-[a-z0-9]+\\.[a-z0-9-]+\\.maas\\.aliyuncs\\.com/compatible-mode/v1",
+        "hosts": [
+          "maas.aliyuncs.com"
+        ],
+        "tabs": [
+          "https://bailian.console.aliyun.com/*"
+        ],
+        "label": "专属接口地址",
+        "example": "https://ws-….cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+        "hint": "在 API Key 页面「按量付费 Base URL」下面，复制 /compatible-mode/v1 结尾的那一行粘贴到这里。"
+      },
       "login": {
         "statusApi": {
           "url": "https://bridge.aliyun.com/abs/home/queryUserBaseInfo",
@@ -45,23 +61,28 @@
           "id": "quota",
           "title": "开启免费额度，保持「用完即停」",
           "body": [
-            "打开「免费额度」页面，看每个模型的「状态」是不是都「已开启」。",
-            "没开启的：点右上角「批量设置」→ 全选 → 批量开启 → 确认。",
-            "「用完即停」保持打开（默认就是开着的）：免费额度用完会自动停止，不会额外扣费。"
+            "点「帮我一键全部开启」：引导会打开「免费额度」页面，把所有模型的「免费额度用完即停」都打开（批量设置 → 全选 → 批量开启 → 确认）。",
+            "开着它，免费额度用完会自动停止，不会额外扣费。以后想付费继续用，再回来选「节省计划」。",
+            "也可以自己在页面上操作：右上角「批量设置」→ 全选 → 批量开启。"
           ],
+          "next": "已设置好，下一步",
+          "auto": {
+            "kind": "freeTierStopOn",
+            "label": "帮我一键全部开启",
+            "url": "https://bailian.console.aliyun.com/cn-beijing/costing-balance/free-quota"
+          },
           "open": {
             "label": "打开免费额度页",
             "url": "https://bailian.console.aliyun.com/cn-beijing/costing-balance/free-quota"
-          },
-          "next": "已设置好，下一步"
+          }
         },
         {
           "id": "key",
           "title": "创建 API Key",
           "body": [
-            "打开「API Key」页面，点「创建 API-KEY」。",
-            "描述随便填（比如「一词一境」），直接点「确定」。",
-            "复制生成的 Key。"
+            "打开「API Key」页面，在「按量付费」那一栏点「创建 API-KEY」（不是上面 Token Plan 的）。",
+            "描述随便填（比如「一词一境」），直接点「确定」，然后复制生成的 Key（只显示这一次）。",
+            "页面上「按量付费 Base URL」是你自己的专属接口地址，引导会自动复制，不用管它。"
           ],
           "open": {
             "label": "打开 API Key 页",
@@ -75,19 +96,197 @@
           "type": "key"
         }
       ],
+      "routeTitle": "选择付费方式",
+      "routeLabel": "免费额度",
+      "routeDesc": "新用户每个模型约 100 万 Token 免费额度。保持「用完即停」打开，额度用完就停，不会扣费。不确定选哪个就选这个。",
+      "routes": [
+        {
+          "id": "saving-plan",
+          "label": "节省计划（按量付费）",
+          "desc": "免费额度不够用、要付费继续用的选这个：先买节省计划，之后按实际用量从里面抵扣，比直接按量付费便宜。",
+          "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "model": "qwen3.8-flash",
+          "endpoint": {
+            "find": "https://ws-[a-z0-9]+\\.[a-z0-9-]+\\.maas\\.aliyuncs\\.com/compatible-mode/v1",
+            "hosts": [
+              "maas.aliyuncs.com"
+            ],
+            "tabs": [
+              "https://bailian.console.aliyun.com/*"
+            ],
+            "label": "专属接口地址",
+            "example": "https://ws-….cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+            "hint": "在 API Key 页面「按量付费 Base URL」下面，复制 /compatible-mode/v1 结尾的那一行粘贴到这里。"
+          },
+          "keyWarn": [
+            {
+              "prefix": "sk-sp-",
+              "text": "这是 Token Plan 的 Key（sk-sp- 开头），按量付费的接口不认。请点上面第 2 步「选择付费方式」改选「Token Plan 订阅」，或回到 API Key 页在「按量付费」下面新建一个。"
+            }
+          ],
+          "steps": [
+            {
+              "id": "buy",
+              "title": "购买节省计划",
+              "body": [
+                "打开节省计划页面，选一个面额购买（就是百炼「免费额度」页右上角「购买节省计划」打开的页面）。",
+                "已经买过的直接点「下一步」。"
+              ],
+              "open": {
+                "label": "打开节省计划页",
+                "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_2"
+              },
+              "next": "已购买，下一步",
+              "payLink": "savingPlan"
+            },
+            {
+              "id": "quota-off",
+              "title": "关闭「免费额度用完即停」",
+              "body": [
+                "点「帮我一键全部关闭」：引导会打开「免费额度」页面，把所有模型的「免费额度用完即停」都关掉（批量设置 → 全选 → 批量关闭 → 在阿里云的确认框里点「确认」）。",
+                "关掉以后，免费额度照样先用；免费额度用完后产生的用量要付费，先从节省计划里抵扣，不够的按量计费，阿里云会推送用量账单。开着的话，免费额度一用完接口就报错停用（403 FreeTierOnly），节省计划用不上。",
+                "也可以自己在页面上操作：右上角「批量设置」→ 全选 → 批量关闭 → 确认。"
+              ],
+              "next": "已关闭，下一步",
+              "auto": {
+                "kind": "freeTierStopOff",
+                "label": "帮我一键全部关闭",
+                "url": "https://bailian.console.aliyun.com/cn-beijing/costing-balance/free-quota"
+              },
+              "open": {
+                "label": "打开免费额度页",
+                "url": "https://bailian.console.aliyun.com/cn-beijing/costing-balance/free-quota"
+              }
+            },
+            {
+              "id": "key",
+              "title": "创建 API Key",
+              "body": [
+                "打开「API Key」页面，在「按量付费」那一栏点「创建 API-KEY」（不是上面 Token Plan 的）。",
+                "描述随便填（比如「一词一境」），直接点「确定」，然后复制生成的 Key（只显示这一次）。",
+                "页面上「按量付费 Base URL」是你自己的专属接口地址，引导会自动复制，不用管它。"
+              ],
+              "open": {
+                "label": "打开 API Key 页",
+                "url": "https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key"
+              },
+              "next": "已复制，下一步"
+            },
+            {
+              "id": "paste",
+              "title": "粘贴 Key 并检测",
+              "type": "key"
+            }
+          ],
+          "quotaTip": "免费额度或余额用完了：可以买节省计划继续用（买完要到「免费额度」页关掉「用完即停」），或者充值后按量付费。",
+          "products": [
+            {
+              "title": "节省计划",
+              "desc": "按量付费的模型用量从节省计划里抵扣，比直接按量付费便宜。",
+              "label": "去看看",
+              "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_2",
+              "route": "saving-plan",
+              "payLink": "savingPlan"
+            },
+            {
+              "title": "全模型通用抵扣包（建议先买）",
+              "desc": "新用户 27 元买 3 个月，每月抵扣 20 元（共 60 元）。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。首次付款满 20 元还送一张 10 元优惠券。",
+              "label": "去看看",
+              "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274..",
+              "route": "saving-plan"
+            },
+            {
+              "title": "个人版 Token Plan Lite",
+              "desc": "新用户 19.5 元/月起（原价 39 元），每月 11500 credits。",
+              "label": "去看看",
+              "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
+              "route": "token-plan",
+              "payLink": "tokenPlan"
+            }
+          ]
+        },
+        {
+          "id": "token-plan",
+          "label": "Token Plan 订阅",
+          "desc": "已经订阅、或打算按月订阅 Token Plan 个人版（用 Credits 计量，Lite 新客 19.5 元/月）。",
+          "baseUrl": "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+          "model": "qwen3.8-flash",
+          "keyWarn": [
+            {
+              "prefix": "sk-ws-",
+              "text": "这是按量付费的 Key（sk-ws- 开头），Token Plan 的接口不认。请在 Token Plan「我的订阅」页面生成套餐专属 Key（sk-sp- 开头），或点上面第 2 步改选「免费额度 / 按量付费」。"
+            }
+          ],
+          "steps": [
+            {
+              "id": "subscribe",
+              "title": "订阅 Token Plan 个人版",
+              "body": [
+                "打开 Token Plan 页面（会自动滚到 Token Plan 那一块），选一个套餐点「立即订阅」，付款。只用来翻译的话 Lite 就够用。",
+                "已经订阅过的直接点「下一步」。"
+              ],
+              "open": {
+                "label": "打开 Token Plan 页",
+                "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1"
+              },
+              "next": "已订阅，下一步",
+              "payLink": "tokenPlan"
+            },
+            {
+              "id": "key",
+              "title": "生成套餐专属 API Key",
+              "body": [
+                "打开「我的订阅」页面，往下拉到「套餐专属 API Key」，点「生成」。",
+                "在弹出的窗口里点「复制」，复制 sk-sp- 开头的 Key，它只显示这一次。",
+                "以前生成过、找不到原文的，点「重置」生成新的（旧的会失效，用到它的其他工具要一起换）。"
+              ],
+              "open": {
+                "label": "打开我的订阅",
+                "url": "https://bailian.console.aliyun.com/cn-beijing/subscription/token-plan"
+              },
+              "next": "已复制，下一步"
+            },
+            {
+              "id": "paste",
+              "title": "粘贴 Key 并检测",
+              "type": "key"
+            }
+          ],
+          "quotaTip": "Token Plan 这个周期的 Credits 用完了：可以等额度恢复，或者升级套餐。",
+          "products": [
+            {
+              "title": "升级 Token Plan 套餐",
+              "desc": "Essential 45,000 Credits / 月，是 Lite 的 2.25 倍；新客户首次购买 5 折。",
+              "label": "去看看",
+              "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
+              "route": "token-plan",
+              "payLink": "tokenPlan"
+            }
+          ]
+        }
+      ],
       "quotaTip": "新用户建议先买第 1 个抵扣包（27 元 3 个月，每月抵扣 20 元，百炼上的模型都能用）；用得多再看第 2 个个人版 Token Plan Lite（新用户 19.5 元/月起）。",
       "products": [
         {
           "title": "全模型通用抵扣包（建议先买）",
           "desc": "新用户 27 元买 3 个月，每月抵扣 20 元（共 60 元）。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。首次付款满 20 元还送一张 10 元优惠券。",
           "label": "去看看",
-          "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274.."
+          "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274..",
+          "route": "saving-plan"
         },
         {
           "title": "个人版 Token Plan Lite",
           "desc": "新用户 19.5 元/月起（原价 39 元），每月 11500 credits。",
           "label": "去看看",
-          "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274.."
+          "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
+          "route": "token-plan",
+          "payLink": "tokenPlan"
+        }
+      ],
+      "keyWarn": [
+        {
+          "prefix": "sk-sp-",
+          "text": "这是 Token Plan 的 Key（sk-sp- 开头），按量付费的接口不认。请点上面第 2 步「选择付费方式」改选「Token Plan 订阅」，或回到 API Key 页在「按量付费」下面新建一个。"
         }
       ]
     }
