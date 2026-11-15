@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "rev": 23,
+  "rev": 24,
   "usage": {
     "url": "https://onecontext.cloud/v1/usage"
   },
@@ -181,23 +181,16 @@
           "quotaTip": "免费额度或余额用完了：可以买节省计划继续用（买完要到「免费额度」页关掉「用完即停」），或者充值后按量付费。",
           "products": [
             {
-              "title": "节省计划",
-              "desc": "按量付费的模型用量从节省计划里抵扣，比直接按量付费便宜。",
+              "title": "节省计划（建议先买）",
+              "desc": "新用户包月 5 折，包季 4.5 折。",
               "label": "去看看",
               "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_2",
               "route": "saving-plan",
               "payLink": "savingPlan"
             },
             {
-              "title": "全模型通用抵扣包（建议先买）",
-              "desc": "新用户 27 元买 3 个月，每月抵扣 20 元（共 60 元）。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。首次付款满 20 元还送一张 10 元优惠券。",
-              "label": "去看看",
-              "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274..",
-              "route": "saving-plan"
-            },
-            {
               "title": "个人版 Token Plan Lite",
-              "desc": "新用户 19.5 元/月起（原价 39 元），每月 11500 credits。",
+              "desc": "新用户 5 折，也支持 DeepSeek、Qwen 等模型。",
               "label": "去看看",
               "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
               "route": "token-plan",
@@ -265,18 +258,19 @@
           ]
         }
       ],
-      "quotaTip": "新用户建议先买第 1 个抵扣包（27 元 3 个月，每月抵扣 20 元，百炼上的模型都能用）；用得多再看第 2 个个人版 Token Plan Lite（新用户 19.5 元/月起）。",
+      "quotaTip": "新用户建议先买第 1 个节省计划（包月 5 折，包季 4.5 折）；用得多再看第 2 个个人版 Token Plan Lite（新用户 5 折，也支持 DeepSeek、Qwen 等模型）。",
       "products": [
         {
-          "title": "全模型通用抵扣包（建议先买）",
-          "desc": "新用户 27 元买 3 个月，每月抵扣 20 元（共 60 元）。百炼上的 DeepSeek、Qwen 等模型都能用，自动抵扣，不用手动绑定。首次付款满 20 元还送一张 10 元优惠券。",
+          "title": "节省计划（建议先买）",
+          "desc": "新用户包月 5 折，包季 4.5 折。",
           "label": "去看看",
-          "url": "https://www.aliyun.com/benefit/ai/aistar?userCode=o0val8ah&clubBiz=subTask..12947038..10274..",
-          "route": "saving-plan"
+          "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_2",
+          "route": "saving-plan",
+          "payLink": "savingPlan"
         },
         {
           "title": "个人版 Token Plan Lite",
-          "desc": "新用户 19.5 元/月起（原价 39 元），每月 11500 credits。",
+          "desc": "新用户 5 折，也支持 DeepSeek、Qwen 等模型。",
           "label": "去看看",
           "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
           "route": "token-plan",
