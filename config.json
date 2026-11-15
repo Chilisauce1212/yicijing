@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "rev": 24,
+  "rev": 25,
   "usage": {
     "url": "https://onecontext.cloud/v1/usage"
   },
@@ -15,7 +15,7 @@
       "lead": "新用户开通百炼后，每个模型都有约 100 万 Token 的免费额度，90 天内有效。点下面的按钮，侧边栏会一步步带你开通。",
       "startLabel": "阿里云百炼（推荐链接，注册送100万Token）",
       "startUrl": "https://www.aliyun.com/minisite/goods?userCode=o0val8ah",
-      "disclose": "「推荐链接」来自阿里云「云大使」推广计划，一词一境与阿里云没有隶属关系。",
+      "disclose": "「推荐链接」来自阿里云「云大使」推广计划，一词一境与阿里云没有隶属关系。优惠、价格和适用模型以阿里云官网页面为准，活动可能随时调整。",
       "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
       "model": "qwen3.8-flash",
       "endpoint": {
@@ -182,7 +182,7 @@
           "products": [
             {
               "title": "节省计划（建议先买）",
-              "desc": "新用户包月 5 折，包季 4.5 折。",
+              "desc": "新用户包月 5 折，包季 4.5 折，支持 DeepSeek、Qwen 等模型。",
               "label": "去看看",
               "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_2",
               "route": "saving-plan",
@@ -190,7 +190,7 @@
             },
             {
               "title": "个人版 Token Plan Lite",
-              "desc": "新用户 5 折，也支持 DeepSeek、Qwen 等模型。",
+              "desc": "新用户 5 折，支持 DeepSeek、Qwen 等模型。",
               "label": "去看看",
               "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
               "route": "token-plan",
@@ -258,11 +258,11 @@
           ]
         }
       ],
-      "quotaTip": "新用户建议先买第 1 个节省计划（包月 5 折，包季 4.5 折）；用得多再看第 2 个个人版 Token Plan Lite（新用户 5 折，也支持 DeepSeek、Qwen 等模型）。",
+      "quotaTip": "新用户建议先买第 1 个节省计划（包月 5 折，包季 4.5 折）；用得多再看第 2 个个人版 Token Plan Lite（新用户 5 折）。两个都支持 DeepSeek、Qwen 等模型。",
       "products": [
         {
           "title": "节省计划（建议先买）",
-          "desc": "新用户包月 5 折，包季 4.5 折。",
+          "desc": "新用户包月 5 折，包季 4.5 折，支持 DeepSeek、Qwen 等模型。",
           "label": "去看看",
           "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_2",
           "route": "saving-plan",
@@ -270,7 +270,7 @@
         },
         {
           "title": "个人版 Token Plan Lite",
-          "desc": "新用户 5 折，也支持 DeepSeek、Qwen 等模型。",
+          "desc": "新用户 5 折，支持 DeepSeek、Qwen 等模型。",
           "label": "去看看",
           "url": "https://www.aliyun.com/benefit/scene/ai-discount?source=5176.29345612&userCode=o0val8ah#J_1",
           "route": "token-plan",
